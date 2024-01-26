@@ -11,6 +11,8 @@ public class login extends javax.swing.JFrame {
 
     public login() {
         initComponents();
+        this.setSize(500,240);
+        this.setTitle("Iniciar Sesion");
     }
 
     private void initComponents() {
@@ -43,6 +45,7 @@ public class login extends javax.swing.JFrame {
             new principal().setVisible(true);
             // Cierra la pantalla de inicio de sesión
             this.dispose();
+
         } else {
             JOptionPane.showMessageDialog(this, "Inicio de sesión fallido");
         }

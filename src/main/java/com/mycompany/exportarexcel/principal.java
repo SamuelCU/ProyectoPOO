@@ -26,7 +26,7 @@ public class principal extends javax.swing.JFrame {
     public principal() {
         // Con esto inicias todos los componentes de Jframe
         initComponents();
-        new login().setVisible(true);
+        //new login().setVisible(true);
     }
 
     PersonasDao personasDao = new PersonasDao();
