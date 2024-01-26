@@ -39,14 +39,14 @@ public class ExportarExcel {
             try {
                 File archivoXLS = new File(ruta);
                 if (archivoXLS.exists()) {
-                    archivoXLS.delete();
+                    archivoXLS.delete(); //Si el archivo ya existe se elimina
                 }
                 archivoXLS.createNewFile();
                 Workbook libro = new HSSFWorkbook();
-                FileOutputStream archivo = new FileOutputStream(archivoXLS);
+                FileOutputStream archivo = new FileOutputStream(archivoXLS);  //Flujo de salida para escribir en el archivo
                 Sheet hoja = libro.createSheet("Mi hoja de trabajo 1");
                 hoja.setDisplayGridlines(true);
-                for (int f = 0; f < t.getRowCount(); f++) {
+                for (int f = 0; f < t.getRowCount(); f++) {  //Se cre filas y columnas
                     Row fila = hoja.createRow(f);
                     for (int c = 0; c < t.getColumnCount(); c++) {
                         Cell celda = fila.createCell(c);
