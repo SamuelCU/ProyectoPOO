@@ -4,11 +4,12 @@
  */
 package com.mycompany.exportarexcel;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.List;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 import com.mycompany.exportarexcel.models.Personas;
 import com.mycompany.exportarexcel.models.PersonasDao;
@@ -56,11 +57,27 @@ public class principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        toolbar = new javax.swing.JToolBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Exportar base de Datos");
 
+
+
+        // Crear botón Exportar
+        JButton exportButton = new JButton("Exportar");
+
+        // Crear botón Importar
+        JButton importButton = new JButton("Importar");
+
+
+        // Agregar botones al JToolBar
+        toolbar.add(exportButton);
+        toolbar.add(importButton);
+
+        // Agregar JToolBar al JFrame
+        this.add(toolbar);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 getData(),
@@ -155,4 +172,5 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JToolBar toolbar;
 }

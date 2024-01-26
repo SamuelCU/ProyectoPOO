@@ -45,7 +45,7 @@ public class PersonasDao {
                 listpersonas.add(per);
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.toString()); 
+            JOptionPane.showMessageDialog(null, ex.toString());
         }
 
         return listpersonas;
