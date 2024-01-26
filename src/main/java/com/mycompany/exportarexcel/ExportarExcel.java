@@ -30,7 +30,11 @@ public class ExportarExcel {
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
+
+        // Se verifica si el usuario elige un archivo y presiona "Guardar"
         if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+
+            // Se concatena ".xls" al nombre del archivo y se crea el archivo
             String ruta = chooser.getSelectedFile().toString().concat(".xls");
             try {
                 File archivoXLS = new File(ruta);
