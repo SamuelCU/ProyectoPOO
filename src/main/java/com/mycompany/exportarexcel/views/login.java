@@ -26,6 +26,9 @@ public class login extends javax.swing.JFrame {
         JMenu menuInicio = new JMenu("Inicio");
         menuBar.add(menuInicio);
 
+        JMenu registro = new JMenu("Registro");
+        menuBar.add(registro);
+
         JMenuItem menuItemLogin = new JMenuItem("Iniciar Sesión");
         menuItemLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
