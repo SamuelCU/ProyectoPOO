@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import com.mycompany.exportarexcel.models.Personas;
 import com.mycompany.exportarexcel.models.PersonasDao;
+import com.mycompany.exportarexcel.views.login;
 
 /**
  *
@@ -25,6 +26,7 @@ public class principal extends javax.swing.JFrame {
     public principal() {
         // Con esto inicias todos los componentes de Jframe
         initComponents();
+        new login().setVisible(true);
     }
 
     PersonasDao personasDao = new PersonasDao();
@@ -147,7 +149,7 @@ public class principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new principal().setVisible(true);
+                new login().setVisible(true);
             }
         });
     }
