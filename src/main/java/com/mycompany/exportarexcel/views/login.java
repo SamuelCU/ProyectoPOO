@@ -35,21 +35,37 @@ public class login extends javax.swing.JFrame {
     }
 
     private void realizarInicioSesion() {
-        // Lógica para verificar el inicio de sesión (similar a lo que hicimos en la clase principal)
-        String usuario = JOptionPane.showInputDialog(this, "Ingrese usuario:");
-        String contrasena = JOptionPane.showInputDialog(this, "Ingrese contraseña:");
+        // Lógica para verificar el inicio de sesión
+        JPanel panel = new JPanel();
+        JLabel userLabel = new JLabel("Usuario:");
+        JTextField usuarioField = new JTextField(10);
+        JLabel passwordLabel = new JLabel("Contraseña:");
+        JPasswordField contrasenaField = new JPasswordField(10);
 
-        if (iniciarSesion(usuario, contrasena)) {
-            JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso");
-            // Abre la pantalla principal después de iniciar sesión
-            new principal().setVisible(true);
-            // Cierra la pantalla de inicio de sesión
-            this.dispose();
+        panel.add(userLabel);
+        panel.add(usuarioField);
+        panel.add(passwordLabel);
+        panel.add(contrasenaField);
 
-        } else {
-            JOptionPane.showMessageDialog(this, "Inicio de sesión fallido");
+        int result = JOptionPane.showConfirmDialog(this, panel, "Inicio de Sesión",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+        if (result == JOptionPane.OK_OPTION) {
+            String usuario = usuarioField.getText();
+            String contrasena = new String(contrasenaField.getPassword());
+
+            if (iniciarSesion(usuario, contrasena)) {
+                JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso");
+                // Abre la pantalla principal después de iniciar sesión
+                new principal().setVisible(true);
+                // Cierra la pantalla de inicio de sesión
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Inicio de sesión fallido");
+            }
         }
     }
+
 
     private boolean iniciarSesion(String usuario, String contrasena) {
         // Lógica de inicio de sesión (puedes personalizarla según tus necesidades)
